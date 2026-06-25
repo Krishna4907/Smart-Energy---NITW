@@ -1,0 +1,21 @@
+PLAID Random Forest — held-out accuracy 97.3%
+
+                 precision    recall  f1-score   support
+
+air_conditioner      0.971     0.978     0.975       274
+           bulb      0.994     1.000     0.997       176
+            cfl      0.994     0.971     0.982       315
+            fan      0.937     0.983     0.960       302
+         fridge      0.909     0.930     0.920       129
+      hairdryer      1.000     0.981     0.990       462
+         heater      1.000     0.993     0.997       150
+         laptop      0.972     0.986     0.979       357
+      microwave      0.967     0.946     0.956       276
+ soldering_iron      0.833     1.000     0.909         5
+         vacuum      0.978     0.989     0.984        92
+washing_machine      0.942     0.898     0.919       108
+
+       accuracy                          0.973      2646
+      macro avg      0.958     0.971     0.964      2646
+   weighted avg      0.974     0.973     0.973      2646
+
