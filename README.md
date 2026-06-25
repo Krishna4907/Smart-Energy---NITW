@@ -96,6 +96,16 @@ trains an RF in the same `joblib` format, so the server can load it with
 `--model models/your_rf.joblib`. To train on data captured by *your* ESP32:
 `firmware/nilm_capture/` + `python/capture_own_data.py` + `python/train_own.py`.
 
+A model trained on the supplied `data2.zip` (bulb / heater / microwave, PLAID-style
+30 kHz / 60 Hz) is included as `models/user_rf.joblib` — **98.1%** held-out
+(`models/user_rf_report.txt`). Run the server with it via:
+
+```bash
+python python/train_zip.py --zip data2.zip --fs 30000 --mains 60 \
+    --win 1200 --n-windows 3 --out models/user_rf.joblib   # reproduce
+python python/inference_server.py --model models/user_rf.joblib --tariff 8
+```
+
 ## Security
 
 The WiFi password and ThingSpeak key you shared earlier were exposed publicly —

@@ -1,0 +1,10 @@
+User dataset (data2.zip: bulb / heater / microwave) — Random Forest
+Source: 410 PLAID-style CSVs (30 kHz, 60 Hz), col0=current col1=voltage, ~2500 samples each.
+Trained with: python python/train_zip.py --zip data2.zip --fs 30000 --mains 60 --win 1200 --n-windows 3 --out models/user_rf.joblib
+
+Held-out accuracy: 98.1%
+              precision    recall  f1-score   support
+        bulb      0.933     1.000     0.966        84
+      heater      1.000     1.000     1.000        60
+   microwave      1.000     0.964     0.981       165
+    accuracy                          0.981       309
