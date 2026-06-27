@@ -62,11 +62,8 @@ def label_of(path: Path, root: Path, mode: str) -> str:
             if sep in stem:
                 return stem.split(sep)[0].lower()
         return stem.lower()
-    # mode == "dir": use the first folder under root, else immediate parent
-    rel = path.relative_to(root)
-    parts = rel.parts
-    if len(parts) >= 2:
-        return parts[0].lower()
+    # mode == "dir": the immediate parent folder is the class label
+    # (robust to an extra wrapping top-level folder inside the zip)
     return path.parent.name.lower()
 
 
